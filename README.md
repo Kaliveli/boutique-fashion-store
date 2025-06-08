@@ -99,8 +99,11 @@ boutique-fashion-store/
 ├── next.config.js           # Next.js configuration
 ├── tailwind.config.ts       # Tailwind CSS configuration
 ├── package.json             # Dependencies and scripts
+├── FEATURES.md              # Complete feature documentation
 └── README.md               # Project documentation
 ```
+
+> **📋 Repository Contents**: This repository showcases the complete application architecture with representative samples. The uploaded files demonstrate key functionality including the homepage, shop page with advanced filtering, product data structure, UI components, and styling system. For the complete source code with all 50+ files including product detail pages, cart functionality, checkout process, and additional UI components, please refer to the [FEATURES.md](FEATURES.md) documentation.
 
 ## 🏗️ Build & Deployment
 
