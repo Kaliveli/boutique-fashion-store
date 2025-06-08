@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Boutique Fashion Color Palette */
+  --background: 252 250 248; /* ivory */
+  --foreground: 41 37 36; /* stone-800 */
+  --card: 255 255 255;
+  --card-foreground: 41 37 36;
+  --popover: 255 255 255;
+  --popover-foreground: 41 37 36;
+  
+  /* Primary - Blush Pink */
+  --primary: 244 214 215; /* rose-200 */
+  --primary-foreground: 136 19 55; /* rose-900 */
+  
+  /* Secondary - Taupe */
+  --secondary: 231 229 228; /* stone-200 */
+  --secondary-foreground: 68 64 60; /* stone-700 */
+  
+  /* Muted - Beige */
+  --muted: 245 245 244; /* stone-100 */
+  --muted-foreground: 120 113 108; /* stone-500 */
+  
+  /* Accent - Soft Rose */
+  --accent: 254 242 242; /* rose-50 */
+  --accent-foreground: 159 18 57; /* rose-800 */
+  
+  --destructive: 239 68 68;
+  --destructive-foreground: 255 255 255;
+  --border: 231 229 228; /* stone-200 */
+  --input: 231 229 228;
+  --ring: 244 214 215; /* rose-200 */
+  --radius: 0.75rem;
+  
+  /* Chart colors */
+  --chart-1: 244 214 215;
+  --chart-2: 251 207 232;
+  --chart-3: 253 230 138;
+  --chart-4: 196 181 253;
+  --chart-5: 147 197 253;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .luxury-gradient {
+    @apply bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-100;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+  
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+  
+  .shimmer::before {
+    @apply absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    content: '';
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .product-card {
+    @apply group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100;
+  }
+  
+  .product-card:hover {
+    @apply transform -translate-y-2;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border-2 border-sky-200 text-sky-700 hover:bg-sky-50 font-medium px-6 py-3 rounded-lg transition-all duration-300;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-12 lg:py-16;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
